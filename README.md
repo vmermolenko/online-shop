@@ -1,5 +1,7 @@
 # Online shop
 
+Hosting URL: https://vue-online-shop-16e05.web.app
+
 ## Project setup
 ```
 npm install

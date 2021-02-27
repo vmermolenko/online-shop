@@ -30,24 +30,9 @@ export default {
     
     const filter = ref({...route.query})   
 
-
-    // onMounted(() => {
-    //   if (route.query.title || route.query.categories){
-    //     filter.value.title = route.query.title
-    //     filter.value.categories = route.query.categories
-    //   }
-    // })
-
     watch(filter, values => {
       router.replace({  query: { title: values.title, categories : values.categories } })
     })
-
-    // const _setPage = () => router.replace({  query: { title: filter.value.title, categories : filter.value.categories } })
-    // onMounted(() => _setPage())
-
-    // watch(_setPage)
-    
-
 
     const products = computed(() => store.getters['shop/products']
       .sort(function(obj1, obj2) {

@@ -23,15 +23,6 @@
     title="Новый товар"
     @close="modal = false"
   >
-    <!-- <div class="form-control" >
-      <label for="id">id товара</label>
-      <input
-          type="text"
-          id="id"
-          placeholder="id товара"
-          v-model.number="item.id"
-      >
-    </div> -->
     <div class="form-control" >
       <label for="title">Название товара</label>
       <input
@@ -122,7 +113,7 @@ export default {
       onMounted(async () => {
         await store.dispatch('shop/loadCategory')
         await store.dispatch('shop/loadProduct')
-        //await store.dispatch('shop/loadAll')
+
       })
 
 
@@ -149,9 +140,6 @@ export default {
         item.value.category = ''
 
         modal.value = false
-
-        //console.log(allProducts.value);
-
       }
       
      return {

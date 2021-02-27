@@ -32,11 +32,9 @@ export default {
     const route = useRoute()
     const store = useStore()
     const CART_MODEL = computed(() => store.getters['shop/CARD_MODEL'])
-    //const open = ref(false) 
+
     const open = computed(() => !CART_MODEL.value[item.value[0].id] )
-    
-
-
+ 
     const item = computed(() => store.getters['shop/products']
       .filter(product => {
         if (route.params.id) {
@@ -56,16 +54,6 @@ export default {
       })
     )
   
-    onMounted(() => {
-      if (route.params.id) {
-        //console.log(route.params.id)
-        //console.log(item.value[0])
-        //console.log(item.length)
-        //console.log(CART_MODEL.value)
-        //console.log(CART_MODEL.value[route.params.id])
-      }
-    })
-
     const addCart = async (itemAdd) => {
       if (itemAdd.count !== 0){
         CART_MODEL.value[itemAdd.id] = 1
@@ -89,7 +77,7 @@ export default {
       
       if (CART_MODEL.value[itemDec.id] === 0){
         delete CART_MODEL.value[itemDec.id]
-        //open.value = true 
+
       }
 
       await store.dispatch("shop/actionSetCARD_MODEL", CART_MODEL.value)
