@@ -1,4 +1,4 @@
-# module14
+# Online shop
 
 ## Project setup
 ```
